@@ -1,0 +1,66 @@
+STACKS: 
+    
+    Last In First Out : like a stack of pancakes
+
+    pop(): remove top item from stack
+    push(): add item to top of stack
+    peek(): return top of stack
+    isEmpty(): return true only if stack is empty
+
+    Does not offer constant-time access to the xth item.
+    Can be implemented using a linked list.
+    Useful for recursion.
+
+
+class Stack(object):
+    """Stack implemented using a list."""
+
+    def __init__(self):
+        self._stack = []
+
+    def push(self, item):
+        """Add item to top."""
+
+        self._stack.append(item)
+
+    def pop(self):
+        """Remove top item."""
+
+        return self._stack.pop()
+
+    def peek(self):
+        """Return, but don't remove, top item."""
+
+        return self._stack[-1]
+
+    def is_empty(self):
+        """Is the stack empty?"""
+
+        return not self._stack
+
+
+QUEUES:
+
+    First In First Out : like a ticket line
+
+    add(item) AKA enqueue(item): add item to end of queue
+    remove() AKA dequeue(): remove FIRST item in the queue
+    peek(): return top of queue
+    isEmpty(): return true if empty
+
+    class Queue:
+
+        def __init__(self):
+            self.queue = []
+
+        def enqueue(self, item):
+            self.queue.append(item)
+
+        def dequeue(self):
+            if len(self.queue) < 1:
+                return None
+            return self.queue.pop(0)
+
+        def is_empty(self):
+            return not self.queue
+
